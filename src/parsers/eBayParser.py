@@ -57,7 +57,7 @@ class eBayParser(AbstractParser):
             parser_logger.exception(f"{self.__class__.__name__}: Ошибка при выполнении _run_once(): {e}")
 
 
-    def _entering_reques(self):
+    def _entering_request(self):
         """Вводит запрос в строку поиска и нажимает кнопку поиска на eBay."""
         from src.logger import parser_logger
         try:
@@ -141,7 +141,7 @@ class eBayParser(AbstractParser):
             self._get_url()
             parser_logger.info(f"{self.__class__.__name__}: Страница eBay успешно загружена")
 
-            self._entering_reques()
+            self._entering_request()
             parser_logger.info(f"{self.__class__.__name__}: Запрос '{self.request}' отправлен")
 
             self._load_data()

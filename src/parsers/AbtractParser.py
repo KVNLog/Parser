@@ -79,7 +79,7 @@ class AbstractParser(ABC):
 
             # Запуск Chrome
             parser_logger.info(f"{self.__class__.__name__}: Запуск Chrome WebDriver (headless=False)")
-            self.driver = uc.Chrome(options=chrome_options, headless=True, use_subprocess=False,
+            self.driver = uc.Chrome(options=chrome_options, headless=False, use_subprocess=False,
                                     version_main=self.version_chrome)
 
             parser_logger.info(f"{self.__class__.__name__}: Chrome WebDriver успешно запущен")
@@ -106,7 +106,7 @@ class AbstractParser(ABC):
         pass
 
     @abstractmethod
-    def _entering_reques(self):
+    def _entering_request(self):
         pass
 
     @abstractmethod

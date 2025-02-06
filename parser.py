@@ -21,19 +21,19 @@ def main():
         for parser_id in selected_parsers:
             try:
                 if parser_id == 1:
-                    site_name = "Чип и Дип"
+                    site_name = "https://www.chipdip.ru/"
                     parser_class = CipDipParser
                     json_folder = "data/JSON/ChipDipData"
                 elif parser_id == 2:
-                    site_name = "eBay"
+                    site_name = "https://www.ebay.com/"
                     parser_class = eBayParser
                     json_folder = "data/JSON/eBayData"
                 elif parser_id == 3:
-                    site_name = "ETM"
+                    site_name = "https://www.etm.ru/"
                     parser_class = ETMParser
                     json_folder = "data/JSON/ETMData"
                 elif parser_id == 4:
-                    site_name = "Yandex Market"
+                    site_name = "https://market.yandex.ru/"
                     parser_class = YandexMarketParser
                     json_folder = "data/JSON/YandexMarketData"
                 else:
@@ -41,7 +41,6 @@ def main():
                     continue
 
                 parser_logger.info(f"Запуск парсера: {site_name}")
-                print(f"\nЗапущен парсер: {site_name}")
 
                 # Загружаем артикулы из Excel
                 articles = list(Loading_Source_Data('Рабочий.xlsx').loading_articles())
@@ -62,7 +61,7 @@ def main():
                         print(f"\n\033[1;32;4mПарсится сайт {site_name}\033[0m\n")
                         print(f"\n\033[1;32;4mПоиск артикула: {article}\033[0m\n")
 
-                        parser = parser_class(url=f"https://www.{site_name.lower().replace(' ', '')}.com/",
+                        parser = parser_class(url= site_name,
                                               request=article,
                                               items=[article, 'Можно добавить что угодно'])
                         parser.parse()
