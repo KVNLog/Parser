@@ -71,6 +71,7 @@ class AbstractParser(ABC):
             # Создание объекта настроек Chrome
             chrome_options = Options()
             chrome_options.page_load_strategy = 'eager'  # Загружать страницу быстрее
+            chrome_options.binary_location = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
 
             # Оптимизация запуска браузера (можно включить при необходимости)
             # chrome_options.add_argument("--disable-extensions")  # Отключает расширения
