@@ -4,5 +4,6 @@ from .ChipDipParser import CipDipParser
 from .eBayParser import eBayParser
 from .ETMParser import ETMParser
 from .YandexMarketParser import YandexMarketParser
+from .Zakupki import Zakupki
 
-__all__ = ["CipDipParser", "eBayParser", "ETMParser", "YandexMarketParser", "AbstractParser", "Loading_Source_Data"]
+__all__ = ["CipDipParser", "eBayParser", "ETMParser", "YandexMarketParser", "AbstractParser", "Loading_Source_Data", "Zakupki"]
